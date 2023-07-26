@@ -52,10 +52,10 @@ async function setup() {
   let local_dev_cluster_version = core.getInput('local_dev_cluster_version');
   core.debug(local_dev_cluster_version);
   if (local_dev_cluster_version === undefined || local_dev_cluster_version == null || local_dev_cluster_version.length === 0) {
-    local_dev_cluster_version="main";
+    local_dev_cluster_version="test";
   }
   core.info(`Get local-cluster-dev with version `+ local_dev_cluster_version);
-  shell.exec("git clone -b "+local_dev_cluster_version+" https://github.com/sustainable-computing-io/local-dev-cluster.git --depth=1");
+  shell.exec("git clone -b "+local_dev_cluster_version+" https://github.com/vprashar2929/local-dev-cluster.git --depth=1");
   let parameterExport  = "";
   if (cluster_provider === "kind"){
     const kind_version = core.getInput('kind_version');
