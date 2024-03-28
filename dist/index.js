@@ -10200,14 +10200,14 @@ function installKind(kind_version) {
 
 async function setup() {
   const cluster_provider = getInputOrDefault('cluster_provider', 'kind');
-  const local_dev_cluster_version = getInputOrDefault('local_dev_cluster_version', 'main');
+  const local_dev_cluster_version = getInputOrDefault('local_dev_cluster_version', 'fix-test');
   const prometheus_enable = getInputOrDefault('prometheus_enable', '');
   const prometheus_operator_version = getInputOrDefault('prometheus_operator_version', '');
   const grafana_enable = getInputOrDefault('grafana_enable', '');
   const tekton_enable = getInputOrDefault('tekton_enable', '');
 
   core.info(`Get local-cluster-dev with version `+ local_dev_cluster_version);
-  executeCommand("git clone -b "+local_dev_cluster_version+" https://github.com/sustainable-computing-io/local-dev-cluster.git --depth=1", "fail to get local-dev-cluster");
+  executeCommand("git clone -b "+local_dev_cluster_version+" https://github.com/vprashar2929/local-dev-cluster.git --depth=1", "fail to get local-dev-cluster");
 
   let parameterExport = "export CLUSTER_PROVIDER="+cluster_provider;
 
